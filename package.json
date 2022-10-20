@@ -1,0 +1,22 @@
+{
+  "name": "docker-cicd-ssh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Started\"",
+    "test": "echo \"Test\"",
+    "build": "echo \"Build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ht-younes-lariani/docker-cicd-ssh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ht-younes-lariani/docker-cicd-ssh/issues"
+  },
+  "homepage": "https://github.com/ht-younes-lariani/docker-cicd-ssh#readme"
+}
