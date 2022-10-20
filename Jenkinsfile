@@ -1,29 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
-      parallel {
-        stage('Install') {
-          steps {
-            nodejs('node-jenkins') {
-              sh 'npm ci'
-            }
+    stage('Install Node') {
+      steps {
+        nodejs 'jenkins-node'
+      }
+    }
 
+    stage('NPM Install') {
+      steps {
+        sh 'npm ci'
+      }
+    }
+
+    stage('Build') {
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'npm run build'
           }
         }
 
         stage('Test') {
           steps {
-            sh 'npm run test'
+            sh 'npm test'
           }
         }
 
-      }
-    }
-
-    stage('Build') {
-      steps {
-        sh 'npm run build'
       }
     }
 
