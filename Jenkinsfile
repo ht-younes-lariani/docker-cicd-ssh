@@ -5,7 +5,10 @@ pipeline {
       parallel {
         stage('Install') {
           steps {
-            sh 'npm ci'
+            nodejs('node-jenkins') {
+              sh 'npm ci'
+            }
+
           }
         }
 
@@ -17,6 +20,7 @@ pipeline {
 
       }
     }
+
     stage('Build') {
       steps {
         sh 'npm run build'
