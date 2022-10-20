@@ -1,15 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Install Node') {
-      steps {
-        nodejs 'jenkins-node'
-      }
-    }
-
     stage('NPM Install') {
       steps {
-        sh 'npm ci'
+        nodejs('jenkins-node') {
+          sh 'npm install'
+        }
+
       }
     }
 
